@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_recordatorios" value="name:id_recordatorio;datatype:int,name:nombre;datatype:string,name:descripcion;datatype:blob,name:estado;datatype:int" />
+</info>

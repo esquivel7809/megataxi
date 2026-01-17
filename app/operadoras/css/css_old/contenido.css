@@ -1,0 +1,126 @@
+div.contenido-modulo{
+	padding-top:12px;
+	overflow: hidden;
+	margin-top: 10px;
+	/*margin-left: 10px;*/
+	margin-bottom: 10px;
+}
+div.contenido-modulo > form {
+	float: left;
+}
+div.contenido-modulo > form > div {
+	overflow: hidden;
+}
+
+.titulo-modulo {
+	/*margin-left: 10px;*/
+	margin-top: 5px;
+	color: rgb(64, 64, 64);
+	font-size: 19px;
+	font-family: 'ITCAvantGardeStd-Demi';
+	height: 20px;
+	border-bottom: 1px solid 
+}
+.border{
+	border: 1px solid #bbb;	
+}
+.border-radius{
+	border-radius: 5px 5px 5px 5px;
+}
+.border-shadow{
+	box-shadow: -1px 1px 5px 0 #888;
+}
+div.form{
+	float: left;
+	margin: 6px 0px 6px 0px;
+}
+div.form > div {
+	margin-top: 10px;
+	float: left;
+	overflow: hidden;
+	width: 100%;
+}
+div.form > div > label {
+	font-family: 'ITCAvantGardeStd-Demi';
+	float: left;
+	width: 200px;
+	margin-top: 5px;
+	text-align: right;
+	/*color: #696969;*/
+	font-size: 18px;
+}
+div.form > div > input[type='text'], div.form > div > input[type='password'] {
+	float: left;
+	margin-left: 7px;
+	width: 340px;
+	height: 20px;
+	border: solid 1px #DFDFDF;
+	color: #7D8582;
+	padding: 6px;
+	font-size: 18px;
+}
+div.form > div > input[type='checkbox'] {
+	float: left;
+	margin: 6px 0px 0px 7px;
+	height: 20px;
+	border: solid 1px #DFDFDF;
+	color: #7D8582;
+	padding: 6px;
+}
+div.form > div > div.radio-section {
+	float: left;
+	width: 330px;
+}
+div.form > div > div.curso-edit-form-seccion-radio > span {
+	cursor: pointer;
+	float: left;
+	height: 15px;
+	margin-left: 13px;
+	margin-top: 3px;
+	width: 15px;
+}
+div.form > div > div.radio-section > label.label-radio {
+	font-family: 'ITCAvantGardeStd-Demi';
+	float: left;
+	width: auto;
+	margin-left: 7px;
+	text-align: left;
+	color: #696969;
+	margin-top: 5px;
+}
+div.form > div > textarea {
+	float: left;
+	margin-left: 7px;
+	width: 348px;
+	height: 130px;
+	border: solid 1px #DFDFDF;
+	color: #7D8582;
+}
+div.form > div div.wrapper-select-form {
+	float: left;
+	margin-left: 7px;
+	width: 351px;
+	height: 34px;
+	border: solid 1px #DFDFDF;
+	overflow: hidden;
+}
+div.form > div div.wrapper-select-form > select {
+	/*background: url(../images/select_bg_form.png) 178px center no-repeat;*/
+	-moz-appearance: none;
+	border: none;
+	font-size: 17px;
+	height: 34px;
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #7D8582;
+}
+div.form > div.botoneria{
+	text-align: center;
+}
+div.botoneria input{
+	min-width: 20%;
+	min-height: 40px;
+	font-weight: bold;
+	font-size: 16px;
+}

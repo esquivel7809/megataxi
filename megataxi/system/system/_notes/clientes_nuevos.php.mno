@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_clientes_nuevos" value="name:telefono;datatype:string,name:direccion;datatype:string,name:estado;datatype:int,name:fecha;datatype:timestamp" />
+</info>

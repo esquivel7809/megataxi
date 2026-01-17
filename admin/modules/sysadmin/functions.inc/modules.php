@@ -1,0 +1,46 @@
+<?php
+
+function sysadmin_get_names() {
+	$license_data = array(
+		//lic key => array('name' => 'Display Name', 'expires' => 'Does this item expire', tie_in => array('Additional modules that require me to work'))
+		'areminder_exp' => array('name' => 'Appointment Reminder', 'expires' => true),
+		'callerid_man_exp' => array('name' => 'Caller ID Management', 'expires' => true),
+		'callrecrpt_exp' => array('name' => 'Call Recording Report', 'expires' => true),
+		'companydirpro_exp' => array('name' => 'Directory Pro', 'expires' => true),
+		'confpro_exp' => array('name' => 'Conference Pro', 'expires' => true),
+		'emp_exp' => array('name' => 'Endpoint Manager', 'expires' => true),
+		'epm_exp' => array('name' => 'Endpoint', 'expires' => true),
+		'Expires' => array('name' => 'Global License Expiration'),
+		'Extensions' => array('name' => 'Extensions'),
+		'extroute_exp' => array('name' => 'Extension Routing', 'expires' => true),
+		'fop2_pro_exp' => array('name' => 'FOP2 Pro'),
+		'fop2_standard_exp' => array('name' => 'FOP2 Standard'),
+		'highavail_exp' => array('name' => 'FreePBX High Availability', 'expires' => true),
+		'isymphony_exp' => array('name' => 'iSymphony Server', 'tie_in' => array('isymphony_users' => array('name' => 'iSymphony Users'), 'isymphony_queues' => array('name' => 'iSymphony Queues'))),
+		'ivrpro_exp' => array('name' => 'IVR Pro', 'expires' => true),
+		'magicbutton_exp' => array('name' => 'Magic Button', 'expires' => true),
+		'offsite_backup_exp' => array('name' => 'Offsite Backup', 'expires' => true),
+		'outboundnotifications_exp' => array('name' => 'Outbound Notifications', 'expires' => true),
+		'outcalllimit_exp' => array('name' => 'Outbound Call Limit', 'expires' => true),
+		'pagepro_exp' => array('name' => 'Paging Pro', 'expires' => true),
+		'qxact_exp' => array('name' => 'QXact Reports', 'expires' => true),
+		'restapi_exp' => array('name' => 'Rest API', 'expires' => true),
+		'restapps_exp' => array('name' => 'Rest Apps', 'expires' => true),
+		'sysadmin_exp' => array('name' => 'Sys Admin', 'expires' => true),
+		'vmnotify_exp' => array('name' => 'VM-Notify', 'expires' => true),
+		'vm_reports_exp' => array('name' => 'Voicemail Reports', 'expires' => true),
+		'webcallback_exp' => array('name' => 'Web Call Back', 'expires' => true),
+		'xdialer_exp' => array('name' => 'Broadcast', 'expires' => true),
+		'xfax_exp' => array('name' => 'Fax Pro', 'expires' => true),
+		'xmpp_exp'	=> array('name' => 'XMPP', 'expires' => true),
+		'pinset_pro_exp' => array('name' => 'Pinset Pro', 'expires' => true),
+		'presence_status_exp' => array('name' => 'Presence Management', 'expires' => true),
+		'pinset_pro_exp' => array('name' => 'Pinset Pro', 'expires' => true),
+		'xview_exp' => array('name' => 'XactView', 'tie_in' => array ('xview_user' => array('name' => 'XactView Clients'), 'xview_queues' => array('name' => 'XactView Queues'))),
+		'parkpro_exp' => array('name' => 'Park Pro', 'expires' => true),
+		'vqplus_exp' => array('name' => 'VQ Plus', 'expires' => true),
+		'pbxact_exp' => array('name' => 'PBXact', 'expires' => true),
+		'classofservice_exp' => array('name' => 'Class of Service', 'expires' => true),
+	);	
+	return $license_data;
+}

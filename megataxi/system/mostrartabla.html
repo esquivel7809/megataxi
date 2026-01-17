@@ -1,0 +1,46 @@
+<html>
+<head><title>holaaaaaaaaaaaaaa</title>
+</head>
+<body>
+<p> este es el listado de los datos</p>
+
+<?php
+$nombre_bd = 'megataxi';
+
+if (!mysql_pconnect('localhost', 'soporte', 'mega89soporte12')) {
+    echo 'No se pudo conectar a mysql';
+    exit;
+}
+
+// Se conecta al SGBD 
+  if(!($iden = mysql_connect("localhost", "soporte", "mega89soporte12"))) 
+    die("Error: No se pudo conectar");
+	
+  // Selecciona la base de datos 
+  if(!mysql_select_db("megataxi", $iden)) 
+    die("Error: No existe la base de datos");
+	
+  // Sentencia SQL: muestra todo el contenido de la tabla "books" 
+  $sentencia = "SELECT * FROM vehiculo_pago"; 
+  // Ejecuta la sentencia SQL 
+  $resultado = mysql_query($sentencia, $iden); 
+  if(!$resultado) 
+    die("Error: no se pudo realizar la consulta");
+	
+  echo '<table>'; 
+  while($fila = mysql_fetch_assoc($resultado)) 
+  { 
+    echo '<tr>'; 
+    echo '<td>' . $fila['Titulo'] . '</td><td>' . $fila['Resumen'] . '</td>'; 
+    echo '</tr>'; 
+  } 
+  echo '</table>';
+  
+  // Libera la memoria del resultado
+  mysql_free_result($resultado);
+  
+  // Cierra la conexión con la base de datos 
+  mysql_close($iden); 
+?> 
+</body> 
+</html> 

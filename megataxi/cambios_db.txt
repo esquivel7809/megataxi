@@ -1,0 +1,1 @@
+alter table vehiculo add pago int not null default '1';

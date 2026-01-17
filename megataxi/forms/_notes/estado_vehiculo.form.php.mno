@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_estado_vehiculo" value="name:id_estado;datatype:int,name:nombre;datatype:string" />
+</info>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_propietarios" value="name:id_propietario;datatype:int,name:documento;datatype:string,name:nombre;datatype:string,name:direccion;datatype:string,name:telefono;datatype:string,name:notas;datatype:blob" />
+	<infoitem key="UD_usuarios" value="name:id_usuario;datatype:int,name:usuario;datatype:string,name:clave;datatype:string,name:nombre;datatype:string,name:perfil;datatype:int,name:estado;datatype:int" />
+</info>

@@ -1,0 +1,6 @@
+los estados de los servicios son:
+
+
+	0 Pendiente
+	1 Prestado
+	2 Cancelado

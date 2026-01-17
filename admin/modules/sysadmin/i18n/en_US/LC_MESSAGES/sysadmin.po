@@ -1,0 +1,285 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for sysadmin
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-19 09:51-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Abnormal Call Volume"
+msgstr ""
+
+msgid "Abnormal Call Volume Notifications"
+msgstr ""
+
+msgid "Abnormalcallvolume found...Starting migration.."
+msgstr ""
+
+msgid "Abnormalcallvolume uninstalled successfully..."
+msgstr ""
+
+msgid "Address to send alert emails to."
+msgstr ""
+
+msgid "Alert Email"
+msgstr ""
+
+msgid "Annually"
+msgstr ""
+
+msgid "Change log available at: "
+msgstr ""
+
+msgid "Checking for abnormalcallvolume.."
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "DDNS"
+msgstr ""
+
+msgid "DNS"
+msgstr ""
+
+msgid "Daily"
+msgstr ""
+
+msgid ""
+"ERROR: Unable to install sysadmin. The sysadmin RPM you have installed is "
+"too old. Please update the sysadmin rpm via the command line, using yum "
+"install sysadmin"
+msgstr ""
+
+msgid "Email Setup"
+msgstr ""
+
+msgid "FTP Server"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "From Address"
+msgstr ""
+
+msgid "International outbound call threshold percent"
+msgstr ""
+
+msgid "International outbound duration threshold percent"
+msgstr ""
+
+msgid "Intrusion Detection"
+msgstr ""
+
+msgid "Intrusion Detection Notifications"
+msgstr ""
+
+msgid "License"
+msgstr ""
+
+msgid ""
+"Migration FAILED. Please resetup abnormalcallvolume in Sysadmin and remove "
+"any previous abnormalcallvolume module..."
+msgstr ""
+
+msgid ""
+"Migration complete..Attempting to uninstall Abnormalcallvolume module..."
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Monthly"
+msgstr ""
+
+msgid "Network Settings"
+msgstr ""
+
+msgid "Never"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "No abnormalcallvolume found.."
+msgstr ""
+
+msgid "Normal outbound call threshold percent"
+msgstr ""
+
+msgid "Normal outbound duration threshold percent"
+msgstr ""
+
+msgid "Notifications Settings"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Port Management"
+msgstr ""
+
+msgid "Power Options"
+msgstr ""
+
+msgid "Quarterly"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid ""
+"Select the percentage of change that must occur on international outbound "
+"calls."
+msgstr ""
+
+msgid ""
+"Select the percentage of change that must occur on normal outbound calls."
+msgstr ""
+
+msgid ""
+"Select the percentage of change that must occur on the average international "
+"outbound call duration."
+msgstr ""
+
+msgid ""
+"Select the percentage of change that must occur on the average normal "
+"outbound call duration."
+msgstr ""
+
+msgid "Storage"
+msgstr ""
+
+msgid "Storage Notifications"
+msgstr ""
+
+msgid "Successfully copied LoadLicenseIfExists.php."
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "System Admin"
+msgstr ""
+
+msgid "The addresss entered here will be set as the \"From:\" address."
+msgstr ""
+
+msgid ""
+"This module will send you notifications if a remote IP has been banned from "
+"your system."
+msgstr ""
+
+msgid ""
+"This module will send you notifications if the UPS battery needs replacing."
+msgstr ""
+
+msgid "This module will send you notifications if the UPS has lost power."
+msgstr ""
+
+msgid "This module will send you notifications if the UPS has regained power."
+msgstr ""
+
+msgid ""
+"This module will send you notifications if the system lost communication to "
+"the UPS."
+msgstr ""
+
+msgid ""
+"This module will send you notifications if the system regains communication "
+"to the UPS."
+msgstr ""
+
+msgid ""
+"This module will send you notifications if your hard drives become low on "
+"space or the raid has been broke."
+msgstr ""
+
+msgid ""
+"This module will send you notifications to notify you of abnormal call "
+"volumes."
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Time Zone"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "UPS Communications Failure"
+msgstr ""
+
+msgid "UPS Communications OK"
+msgstr ""
+
+msgid "UPS Off Battery"
+msgstr ""
+
+msgid "UPS On Battery"
+msgstr ""
+
+msgid "UPS Replace Battery"
+msgstr ""
+
+msgid "UPS Server"
+msgstr ""
+
+msgid "Unable to copy LoadLicenseIfExists.php"
+msgstr ""
+
+msgid "Unable to determine sysadmin rpm version...exiting"
+msgstr ""
+
+msgid "Unable to uninstall abnormalcallvolume..."
+msgstr ""
+
+msgid "Update Log"
+msgstr ""
+
+msgid "Updates"
+msgstr ""
+
+msgid "Upgrade Now"
+msgstr ""
+
+msgid "Upgrade in progress"
+msgstr ""
+
+msgid "VPN"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Weekly"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "already exists"
+msgstr ""
+
+msgid "checking for ftp_server field.."
+msgstr ""
+
+msgid "checking for tftp_server field.."
+msgstr ""
+
+msgid "checking for ups_enabled field.."
+msgstr ""

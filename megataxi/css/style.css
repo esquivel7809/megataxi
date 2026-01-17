@@ -1,0 +1,444 @@
+/* CSS Document */
+/* solo para megataxi */
+div#wrap {
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+div#wrap > div.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+div#wrap > div.row > div.col-md-9,
+div#wrap > div.row > div.col-md-3 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 3px;
+  padding-left: 0px;
+}
+
+div#wrap > div.row .table>tbody>tr>td,
+div#wrap > div.row .table>tbody>tr>th,
+div#wrap > div.row .table>tfoot>tr>td,
+div#wrap > div.row .table>tfoot>tr>th,
+div#wrap > div.row .table>thead>tr>td,
+div#wrap > div.row .table>thead>tr>th {
+  padding: 5px 2px 2px 2px;
+  line-height: 1.42857143;
+  vertical-align: top;
+}
+
+
+
+
+
+
+
+
+
+@media screen
+  {
+  * html
+    {
+    overflow-y: hidden;
+    }
+  * html body
+    {
+    height: 100%;
+    overflow: auto;
+    }
+  }
+
+
+
+* html #elemento_fijo {
+position: absolute;
+
+}
+
+
+
+body{
+	background:#FFFFFF;
+	font-family:Arial, sans-serif;
+	font-size:13px;	
+	color:#000000;
+}
+
+a{
+	color:#00378b;
+	font-size:13px;
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+#banner{
+	text-align:center;
+	top:0px;
+	right:0px;
+	left:0px;
+	color:#00378b;
+	margin-top:0px;
+	padding: 0px 50px 0px 50px;
+}
+
+#img_banner{
+	/*top:0px;
+	right:0px;
+	width:300px;
+	float:right;*/
+	float:left;
+	/*display:inline;*/
+	height: 65px;
+	width: 230px;
+	text-align:right;
+}
+
+#menu_top_left{
+	
+	top:0px;
+	float:left;
+	padding:0px 0px 10px 0px;
+	background:#FFFFFF;
+	height: 26px;
+	width: 1000px;
+	text-align:left;
+}
+		
+
+#menu_top{
+	color:#00378b;
+	font-size:100%; 
+}
+
+#menu_top a{
+	color:#00378b;
+	font-size:100%; 
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+
+#wrap{
+	margin:0px auto;
+	/*padding:50px;*/
+	/*padding: 0px 50px 50px 50px;*/
+	min-height:480px;
+/*	width:750px;
+	max-width:750px;
+	min-width:750px;
+	height:100%;*/
+}
+
+
+#content{
+/*	width:inherit;*/
+/*	min-height:500px;*/
+	font-size:11px;
+/*	top:150px;*/
+	
+/*	padding:150px 0px 10px 0px;	*/
+}
+
+#info_usuario{
+	width:300px;
+	bottom:0;
+	float:left;
+	position:fixed;
+}
+
+
+#footer{
+	clear:left;
+	width:inherit;
+	font-size:9px;
+	text-align:center;
+}
+
+#footer a{
+	font-size:9px;
+	color:#00378b;
+}
+
+/*Titulos mayores nivel 1*/
+h1{
+	font-size:16px;
+	font-weight:bolder;
+	color:#00378b;
+	text-align:center;
+}
+
+/*Sub titulos nivel 2*/
+
+h2{
+	font-family:Arial, sans-serif;
+	font-size:24px;
+	text-align:left;
+	font-style:italic;
+	font-weight:bold;
+	color:#666666;
+}
+
+/*Sub titulos nivel 3*/
+
+h3{
+	font-family:Arial, sans-serif;
+	font-size:18px;
+	text-align:left;
+	font-style:italic;
+	font-weight:bold;
+	color:#666666;
+}
+
+/*Sub titulos nivel 4*/
+
+h4{
+	font-family:Arial, sans-serif;
+	font-size:16px;
+	text-align:left;
+	font-style:italic;
+	font-weight:bold;
+	color:#666666;
+}
+
+/*Texto Normal*/
+
+h5{
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	text-align:left;
+	color:#666666;
+}
+
+.panel_, select, input{
+	font-size:9px;
+	text-align:left;
+}
+
+.panel fieldset{
+	border:solid 1px #00378b;
+}
+
+.panel legend{
+	color:#00378b;
+
+}
+
+
+.t_listas td{
+	font-size:10px;
+	padding:0px 10px 0px 10px;
+	color:#000000;
+}
+
+.td_lista{
+	font-size:10px;
+	padding:0px 10px 0px 10px;
+	color:#000000;
+}
+
+.tr_title td{
+	font-size:11px;
+	color:#00378b;
+	text-align:center;
+	font-weight:bold;
+}
+
+
+
+
+
+#EditBackground{
+	background:#00378B;
+	position:fixed;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	filter: alpha(opacity=50); -moz-opacity: .50; 
+/*	text-align:center;*/
+}
+
+#DivEdicion{
+	position:fixed;
+	top:30%;
+	left:70%;
+	width:500px;
+	/*max-height:80%;*/
+	margin-left:-250px;
+	padding:5px 5px 5px 5px;
+	border:#000099 solid 2px;
+	overflow:auto;
+	background:#FFFFFF;
+}
+#DivEdicion_1_{
+	position:fixed;
+	top:10%;
+	left:50%;
+	width:500px;
+	/*max-height:80%;*/
+	margin-left:-250px;
+	padding:5px 5px 5px 5px;
+	border:#000099 solid 2px;
+	overflow:auto;
+	background:#FFFFFF;
+}
+
+/*
+
+#DivEdicion{
+	position:fixed;
+	top:10%;
+	left:50%;
+	width:500px;
+	max-height:80%;
+	
+	margin-left:-250px;
+
+
+	padding:5px 5px 5px 5px;
+
+	border:#000099 solid 2px;
+
+	overflow:auto;
+
+	background:#FFFFFF;
+
+}
+*/
+
+#promocion{
+	background:#FFFFFF;
+	position:fixed;
+	top:10%;
+	float:left;
+	width:200px;
+	max-height:80%;
+	
+/*	margin-left:-250px;*/
+	/*	bottom:10%;  */
+
+	padding:5px 5px 5px 5px;
+
+	border:#000099 solid 1px;
+
+	overflow:auto;
+
+
+/*	filter: alpha(opacity=50); -moz-opacity: .50; */
+	
+}
+
+#FrameEdicion{
+	text-align:center;
+	margin:0 auto;
+	position:fixed;
+	width:inherit;
+}
+
+div.autocomplete {  position:absolute;
+  width:250px;
+  background-color:white;
+  border:1px solid #888;
+  margin:0;
+  padding:0;}
+div.autocomplete ul {  list-style-type:none;
+  margin:0;
+  padding:0;}
+div.autocomplete ul li.selected { background-color: #ffb;}
+div.autocomplete ul li {  list-style-type:none;
+  display:block;
+  margin:0;
+  padding:2px;
+  height:32px;
+  cursor:pointer;}
+  
+#ultimos_servicios{
+	min-width:300px;
+	overflow:visible;
+	float:left;
+	margin-bottom:0px;
+	padding-left:20px;
+}
+
+#ultimos_clientes{
+	width:300px;
+	float:left;
+	margin-bottom:0px;
+}
+
+#ultimos_recordatorios{
+	margin:0 auto;
+	margin-left:20px;
+	min-width:300px;
+	float:left;
+	padding-left:20px;
+}
+
+#pedidos_x_domicilios{
+	margin:0;
+	margin-left:20px;
+	min-width:300px;
+	float:left;
+}
+
+#panel_servicios{
+	/*margin-left:20px;*/
+	/*min-height:300px;*/
+	/*height:300px;*/
+	overflow:auto;
+	/*max-height:450px;*/
+	height:270px;
+}
+
+
+fieldset legend{
+	font-weight:bold;
+	color:#00378b;
+	
+}
+
+.servicio_domicilios_com td{
+	background:#ffffe6;
+}
+
+.tablita{
+ background-color: #FFF;
+/* border: 1px solid #666;*/
+}
+
+.tablita td{
+	border: 1px solid #CCC;
+	padding:2px;	
+	font-family: Arial;
+	font-size: 12px;	
+}
+
+.tablita .servicio_domicilios_com td  {
+ border: 1px solid #CCC;
+ padding: 2px;
+ font-family: Arial;
+ font-size: 12px;
+ color: #000;
+ background-color: #FFFFA8;
+}
+
+.div_td_image{
+	padding:0 3px;
+}
+
+input, image{
+	cursor:pointer;
+}
+
+image{
+	border: 1px solid #FFF;
+}
+.ser_direccion{
+	font-family: "DroidSansRegular","Trebuchet MS",sans-serif;
+	/*font-size:13px;*/
+}
+.clear{
+	clear:both;
+}

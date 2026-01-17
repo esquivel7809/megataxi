@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_propietarios" value="name:id_propietario;datatype:int,name:documento;datatype:string,name:nombre;datatype:string,name:direccion;datatype:string,name:telefono;datatype:string,name:notas;datatype:blob" />
+	<infoitem key="UD_tipo_suspensions" value="name:id_tipo;datatype:int,name:nombre;datatype:string,name:duracion;datatype:int" />
+	<infoitem key="UD_tipo_suspension" value="name:id_tipo;datatype:int,name:nombre;datatype:string,name:duracion;datatype:int" />
+</info>

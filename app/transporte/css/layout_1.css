@@ -1,0 +1,536 @@
+
+/*------------------------------------------------
+	estilos generales - Layout CSS
+------------------------------------------------*/
+body {
+	background-color: #f3f3f3;
+	background: url(images/bg_body.png) repeat-x;
+	/*border-top: 5px solid #000;*/
+	color: #333;
+	font-family: 'HelveticaLTStdCondBold', sans-serif;
+	font-size: 14px;
+	padding: 0px;
+	margin: 0px;
+}
+#body{
+	float:left;
+	min-height: 650px;
+    -moz-box-shadow: 0px 0px 7px #000000;
+    -webkit-box-shadow: 0px 0px 7px #000000;
+    box-shadow: 0px 0px 7px #000000;
+    border:solid 0px #000000;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+#header {
+	height: 61px;
+	padding-top: 7px;
+}
+#branding{
+	font-size: 22px !important;
+	padding-top:10px;
+}
+#navmenu{
+	margin-top: -1px;
+}
+#content{
+	float: left;
+	padding-bottom: 10px;
+}
+a {
+	text-decoration:none;
+}
+#contenido {
+        min-height: 450px;
+}
+#footer {
+	color: #102e57;
+	padding: 20px 0 20px;
+}
+#footer .wrapper {
+	padding: 0 20px;
+}
+.titulo-modulo {
+	/*margin-left: 10px;*/
+	margin-top: 5px;
+	color: rgb(64, 64, 64);
+	font-size: 19px;
+	font-family: 'ITCAvantGardeStd-Demi';
+	height: 20px;
+	border-bottom: 1px solid 
+}
+.subtitulo-modulo {
+	box-shadow: 0px 1px 0px rgb(255, 255, 255);
+	color: rgb(119, 119, 119);
+	font-size: 18px;
+	font-weight: 300;
+	padding: 20px 0px 12px 0px;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+	border-bottom: 1px solid rgb(226, 226, 226);
+	text-align: center;
+	float: left;
+	width: 100%;
+}
+.contenido-modulo{
+	padding-top:12px;
+	overflow: hidden;
+	margin-top: 10px;
+	/*margin-left: 10px;*/
+	margin-bottom: 10px;
+}
+.administrador{
+	text-align: right;
+}
+.border{
+	border: 1px solid #bbb;	
+}
+.border-radius{
+	border-radius: 5px 5px 5px 5px;
+}
+.border-shadow{
+	box-shadow: -1px 1px 5px 0 #888;
+}
+.contenido-modulo > form {
+	float: left;
+}
+.contenido-modulo > form > div {
+	overflow: hidden;
+}
+div.form{
+	float: left;
+	margin: 6px 0px 6px 0px;
+}
+div.form > div {
+	margin-top: 10px;
+	float: left;
+	overflow: hidden;
+	width: 100%;
+}
+div.nomb_prop{
+	font-family: 'ITCAvantGardeStd-Demi';
+	color: #696969;
+	font-size: 18px;
+	width: 380px;
+	float: left;
+	text-align: right;
+	padding-top: 4px;
+}
+div.opcion_prop{
+	width: 100px;
+	float: left;
+	padding-left: 20px;
+}
+
+div.form > div > label {
+	font-family: 'ITCAvantGardeStd-Demi';
+	float: left;
+	width: 200px;
+	margin-top: 5px;
+	text-align: right;
+	color: #696969;
+	font-size: 18px;
+}
+div.form > div > input[type='text'], div.form > div > input[type='password'] {
+	float: left;
+	margin-left: 7px;
+	width: 340px;
+	height: 20px;
+	border: solid 1px #DFDFDF;
+	color: #7D8582;
+	padding: 6px;
+	font-size: 18px;
+}
+div.form > div > input[type='checkbox'] {
+	float: left;
+	margin: 6px 0px 0px 7px;
+	height: 20px;
+	border: solid 1px #DFDFDF;
+	color: #7D8582;
+	padding: 6px;
+}
+div.form > div > div.radio-section {
+	float: left;
+	width: 330px;
+}
+div.form > div > div.curso-edit-form-seccion-radio > span {
+	cursor: pointer;
+	float: left;
+	height: 15px;
+	margin-left: 13px;
+	margin-top: 3px;
+	width: 15px;
+}
+div.form > div > div.radio-section > label.label-radio {
+	font-family: 'ITCAvantGardeStd-Demi';
+	float: left;
+	width: auto;
+	margin-left: 7px;
+	text-align: left;
+	color: #696969;
+	margin-top: 5px;
+}
+div.form > div > textarea {
+	float: left;
+	margin-left: 7px;
+	width: 348px;
+	height: 130px;
+	border: solid 1px #DFDFDF;
+	color: #7D8582;
+}
+div.form > div div.wrapper-select-form {
+	float: left;
+	margin-left: 7px;
+	width: 351px;
+	height: 34px;
+	border: solid 1px #DFDFDF;
+	overflow: hidden;
+}
+div.form > div div.wrapper-select-form > select {
+	/*background: url(../images/select_bg_form.png) 178px center no-repeat;*/
+	-moz-appearance: none;
+	border: none;
+	font-size: 17px;
+	height: 34px;
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #7D8582;
+}
+.botoneria{
+	text-align: center;
+}
+.placa{
+    font-size: 40px !important;
+    height: 50px !important;
+    text-transform: uppercase;
+}
+fieldset {
+	border:1px solid #bbb;
+	padding:10px;
+	/*position:relative;*/
+	/*background:#e9e9e9;*/
+	margin-bottom:10px;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: -1px 1px 5px 0 #888;
+	/*width: 615px;*/
+}
+legend {
+	font-size:1.1em;
+	padding:.4em .8em;
+	background:#fff;
+	border:1px solid #bbb;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: -1px 1px 5px 0 #888;
+}
+.borde-sombra{
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: -1px 1px 5px 0 #888;
+}
+.foto{
+	float:left;
+	width:168px;
+	min-height:120px;
+	border: 1px; 
+}
+.foto > img{
+	width:140px;
+	height:120px;
+}
+.nombre, .otros-datos{
+	width:430px;
+	float:left;
+	font-size:22px;
+}
+.nombre{
+	margin-top: -10px;
+}
+.otros-datos{
+	font-size:18px;
+	padding-top: 10px;
+}
+.otros-datos > p,
+.otros-datos > label{
+	font-size: 13px;
+	font-weight: normal;
+	float: left;
+	margin-right: 10px;
+	text-align: left;
+	line-height: 10px;
+	height:20px;
+}
+.otros-datos > p{
+	width:300px;
+	font-size: 14px;
+	font-weight:bold;
+	margin-bottom: 4px;
+}
+.otros-datos > label{
+	width: 80px;
+	text-align: right !important;
+}
+div.section-vehi-asoc {
+	float:left;
+}
+div.section-vehi-asoc > ul {
+    margin-left: 11px;
+    float: left;
+    height: auto;
+}
+div.section-vehi-asoc > ul > li {
+    width: 78px;
+    float: left;
+    height: 30px;
+	margin-left: 10px;
+}
+div.section-vehi-asoc > ul > li.accion {
+    width: 135px;
+}
+#site_info {
+	text-align: center;
+}
+#site_info .box {
+	color:#ccc;
+	background:#666;
+	margin-bottom:10px;
+}
+#site_info a {
+	color:#fff;
+}
+#site_info a:hover {
+	color:#000;
+}
+/* estilos para los mensajes de confirmacion */
+#mensaje-confirmacion{
+	margin-top:10px;
+}
+#mensaje-confirmacion.error > .login-status-icon {
+	background-image: url("images/notice-error.png");
+}
+#mensaje-confirmacion.exito > .login-status-icon {
+	background-image: url("images/notice-success.png");
+}
+#mensaje-confirmacion .login-status-icon {
+	display: block;
+	position: absolute;
+	width: 27px;
+	height: 27px;
+}
+.exito {
+	background: #5fa74e;
+	background: -moz-linear-gradient(top,#ADDCAE 0,#5fa74e 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ADDCAE),color-stop(100%,#5fa74e));
+	background: -webkit-linear-gradient(top,#ADDCAE 0,#5fa74e 100%);
+	background: -o-linear-gradient(top,#ADDCAE 0,#5fa74e 100%);
+	background: -ms-linear-gradient(top,#ADDCAE 0,#5fa74e 100%);
+	background: linear-gradient(to bottom,#ADDCAE 0,#5fa74e 100%);
+	color: #fff;
+}
+.error {
+	background: #bc3e33;
+	background: -moz-linear-gradient(top,#dd5952 0,#bc3e33 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#dd5952),color-stop(100%,#bc3e33));
+	background: -webkit-linear-gradient(top,#dd5952 0,#bc3e33 100%);
+	background: -o-linear-gradient(top,#dd5952 0,#bc3e33 100%);
+	background: -ms-linear-gradient(top,#dd5952 0,#bc3e33 100%);
+	background: linear-gradient(to bottom,#dd5952 0,#bc3e33 100%);
+	color: #fff;
+}
+.error, .exito {
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	min-height: 27px;
+	padding: 5px 10px 5px 5px;
+	-moz-box-shadow: 0 2px 2px #2b2b2b;
+	-webkit-box-shadow: 0 2px 2px #2b2b2b;
+	box-shadow: 0 2px 2px #2b2b2b;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#2B2B2B')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2,Direction=135,Color='#2B2B2B');
+}
+#login-status-message {
+	padding-left: 36px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+/* fin estilos para los mensajes de confirmacion */
+ul.result_seguros > li{
+	font-size: 12px;
+	width: 115px;
+	float: left;
+	height: 31px;
+	border: 1px solid;
+	padding: 3px;
+}
+ul.result_seguros > li.titulo{
+	font-size:14px;
+	font-weight:bold;
+	text-align: center;
+}
+ul.result_seguros > li.vacio{
+	width: 484px !important;
+	background: #F00;
+}
+ul.result_seguros > li.actualizado{
+	background: #ADDCAE;
+}
+ul.result_seguros > li.vencido{
+	background: #F00;
+}
+/**inicio de session*/
+.session-login{
+	border:solid 0px #000000;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 0px 0px 10px #000000;
+	-webkit-box-shadow: 0px 0px 10px #000000;
+	box-shadow: 0px 0px 10px #000000;
+	font-family: Garamond, serif;
+}
+.login div.inicio_session{
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.login div {
+	margin-top: 8px;
+	float: left;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+}
+.login div label{
+	font-weight: bold;
+	font-size: 17px;
+	color: #555555;
+	float: left;
+	margin: 0;
+	width: 90px;
+}
+.login div > input[type='password'],
+.login div > input[type='text'] {
+	font-weight: bold;
+	font-size: 17px;
+	color: #555555;
+	float: left;
+	margin: 0;
+	margin-left: 7px;
+	width: 150px;
+	height: 20px;
+	border: solid 1px #555555;
+}
+/******/
+.login-button{
+	min-width:30%;
+	min-height:40px;
+}
+.lateral {
+	width: 100%;
+	background-color: #ADDCAE;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	/*behavior: url(ie-css3.htc);*/
+	padding-bottom: 6px;
+	float: left;
+	margin-top: 0px;
+}
+/**estilos para el form de informes**/
+div.contenido-informe {
+	padding-top: 0px !important;
+}
+div.contenido-informe > form > div{
+	float: left !important;
+}
+div.contenido-informe > form > div#tiporeporte {
+	float: right;
+}
+div#otrosfiltros > ul li{
+	width: 140px;
+	float: left;
+}
+div#filtros div{
+	float: left;
+}
+div#filtros > div.sel_filtros{
+	margin-left:10px;
+	margin-right:10px;
+}
+div#filtros > div.sel_filtros h4{
+	padding-top:20px;
+}
+div.fechas_informes > ul li {
+	width: 288px;
+	float: left;
+	margin: 10px;
+}
+/*****/
+
+.nombre_sub{
+	width:300px;
+}
+.item{
+	width:20px;
+}
+
+/*** grilla de vehiculo propietario **/
+ul.propietarios li{
+	float:left;
+	padding: 9px 0px 9px 5px;
+}
+ul.propietarios li.titulo{
+	width:100%;
+	font-family: 'ITCAvantGardeStd-Demi';
+	font-size:20px;
+	text-align:center;
+}
+ul.propietarios li.doc{
+	width:25%;
+}
+ul.propietarios li.nom{
+	width:60%;
+}
+ul.propietarios li.acc{
+	width:10%;
+	padding: 0px;
+}
+ul.propietarios li.acc b.remove{
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	background: url("../img/png/24x24/remove.png") no-repeat scroll 0% 0% transparent;
+	width: 32px;
+	height: 32px;
+}
+/*****/
+/*** grilla de licencias de conduccion**/
+ul.licencias li{
+	float:left;
+	padding: 9px 0px 9px 5px;
+}
+ul.licencias li.titulo{
+	width:100%;
+	font-family: 'ITCAvantGardeStd-Demi';
+	font-size:20px;
+	text-align:center;
+}
+ul.licencias li.doc{
+	width:25%;
+}
+ul.licencias li.nom{
+	width:60%;
+}
+ul.licencias li.acc{
+	width:10%;
+	padding: 0px;
+}
+ul.licencias li.acc b.remove{
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	background: url("../img/png/24x24/remove.png") no-repeat scroll 0% 0% transparent;
+	width: 32px;
+	height: 32px;
+}
+/*****/

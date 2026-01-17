@@ -1,0 +1,40 @@
+<module>
+	<rawname>versionupgrade</rawname>
+	<repo>standard</repo>
+	<name>FreePBX Upgrader</name>
+	<version>2.11.3</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>AGPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
+	<changelog>
+		*2.11.3* If sysadmin is installed make sure it's upgraded as well
+		*2.11.2* Stable Release of 12
+		*2.11.1rc10* Disabled a few other modules (forcefully)
+		*2.11.1rc2* disable cxpanel during install
+		*2.11.1rc1* update for 2.11 upgrade
+	</changelog>
+	<description>
+		This module allows FreePBX 2.11 to be upgraded to FreePBX 12, the next major version.
+	</description>
+	<attention>
+		You will be updated to the next version. You should make sure you have a full backup of your current system. Version 12+ requires Asterisk 1.8 or later. Once you upgrade, you can not downgrade. It may be possible to restore a backup though restoring a system that has been upgraded can run into some anomalies later on though will usually get you back to where you were.
+	</attention>
+	<type>tool</type>
+	<menuitems>
+		<versionupgrade display="versionupgrade" type="setup" category="Admin" sort="10">2.11 to 12 Upgrade Tool</versionupgrade>
+	</menuitems>
+	<depends>
+		<version>lt 12.0alpha1</version>
+		<version>ge 2.11.0</version>
+		<module>framework ge 2.11.0</module>
+		<module>fw_ari</module>
+		<module>logfiles</module>
+		<phpversion>5.3.3</phpversion>
+	</depends>
+	<category>Admin</category>
+	<supported>
+		<version>2.11</version>
+	</supported>
+	<location>release/2.10/versionupgrade-2.10.0.1.tgz</location>
+	<md5sum>4f92645023352832228e4be42eb2bbed</md5sum>
+</module>

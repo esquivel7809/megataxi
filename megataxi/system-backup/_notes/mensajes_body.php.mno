@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_recordatorios" value="name:id_recordatorio;datatype:int,name:telefono;datatype:string,name:descripcion;datatype:blob,name:timestamp;datatype:timestamp,name:hora;datatype:datetime,name:estado;datatype:int" />
+	<infoitem key="UD_mensajes" value="name:id_mensaje;datatype:int,name:texto;datatype:string,name:estado;datatype:int,name:placa;datatype:string" />
+</info>

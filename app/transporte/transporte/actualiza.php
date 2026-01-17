@@ -1,0 +1,52 @@
+<html> 
+
+<head> 
+<title>Actualizacion completada.</title> 
+<META name='robot' content='noindex, nofollow'> 
+</head> 
+
+<body> 
+
+<?php 
+// Actualizamos en funcion del id que recibimos 
+include('conexion.php'); 
+$nombre = $_FILES['archivo']['name'];
+$fecha = date('Y/m/d H:i');
+$tipo = $_FILES['archivo']['type'];
+$tamanio = $_FILES['archivo']['size'];
+$ruta = $_FILES['archivo']['tmp_name'];
+$destino = "archivos/" . $nombre;
+$id = $_POST['id']; 
+
+$nombre1 = $_POST['nombre1']; 
+$nombre2 = $_POST['nombre2']; 
+$apellido1 = $_POST['apellido1']; 
+$apellido2 = $_POST['apellido2']; 
+$direccion = $_POST['direccion']; 
+$celular = $_POST['celular']; 
+$arl = $_POST['arl']; 
+$pension = $_POST['pension']; 
+$salud = $_POST['salud']; 
+
+echo "esta es la ruta";
+echo $ruta;
+  
+
+$sSQL="Update conductor Set primernombre='$nombre1',segundonombre='$nombre2',primerapellido='$apellido1',segundoapellido='$apellido2',direccion='$direccion',celular='$celular',idsalud='$salud',idpension='$pension',idarl='$arl',rutafoto='$ruta' where numerodocumento='$id'"; 
+mysql_query($sSQL); 
+
+//include('cierra_conexion.php');   
+
+echo " 
+<p>Los datos han sido actualizados con exito.</p> 
+
+<p><a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p> 
+
+<p><a href='javascript:history.go(-2)'>OTRO CONDUCTOR</a></p> 
+"; 
+?> 
+
+</body> 
+
+</html>
+

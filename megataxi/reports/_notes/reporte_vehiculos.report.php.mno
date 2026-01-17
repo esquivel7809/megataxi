@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_reportes" value="name:reporte_id;datatype:int,name:mega;datatype:string,name:servicio_id;datatype:int,name:timestamp;datatype:timestamp" />
+</info>

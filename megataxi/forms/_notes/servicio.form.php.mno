@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_servicio" value="name:servicio_id;datatype:int,name:telefono;datatype:string,name:mega;datatype:int,name:estado;datatype:int,name:dt_llamada;datatype:timestamp,name:dt_recogida;datatype:datetime" />
+</info>

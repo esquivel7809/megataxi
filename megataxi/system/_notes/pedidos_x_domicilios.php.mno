@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_contactar" value="name:id_domicilios_com_contacto;datatype:int,name:nombre;datatype:string,name:telefono;datatype:string,name:fecha;datatype:timestamp" />
+</info>

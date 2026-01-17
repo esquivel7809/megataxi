@@ -1,0 +1,307 @@
+<?php require_once('../Connections/conexion.php'); ?>
+<?php include('../libraries/libreria.php'); ?>
+<?php
+
+if(!isset($_SESSION[datos])) session_start();
+
+$currentPage = "vehiculos.php";
+
+$sqlVehiculo="select vehiculo.*, tipo_vehiculo.nombre as tipo, propietario.nombre as propietario, estado_vehiculo.nombre as estadoVehiculo from vehiculo, tipo_vehiculo, propietario, estado_vehiculo where vehiculo.id_tipo=tipo_vehiculo.id_tipo and propietario.id_propietario=vehiculo.id_propietario and estado_vehiculo.id_estado=vehiculo.estado";
+
+
+if($_GET[placa]!="")
+	if($_GET[comparador1]=="=")
+		$sqlVehiculo.=" and placa $_GET[comparador1] '$_GET[placa]'";
+	else
+		$sqlVehiculo.=" and placa $_GET[comparador1] '%$_GET[placa]%'";
+	
+	
+if($_GET[color]!=""){
+	if($_GET[comparador2]=="=")
+		$sqlVehiculo.=" and color $_GET[comparador2] '$_GET[color]'";
+	else
+		$sqlVehiculo.=" and color $_GET[comparador2] '%$_GET[color]%'";	
+}
+
+if($_GET[pasajeros]!=""){
+		$sqlVehiculo.=" and pasajeros $_GET[comparador3] '$_GET[pasajeros]'";
+}
+
+if($_GET[carga]!=""){
+		$sqlVehiculo.=" and carga $_GET[comparador4] '$_GET[carga]'";
+}
+
+if($_GET[tipo]!=""){
+		$sqlVehiculo.=" and id_tipo $_GET[comparador5] '$_GET[tipo]'";
+}
+
+if($_GET[propietario]!=""){
+		$sqlVehiculo.=" and propietario.id_propietario $_GET[comparador6] '$_GET[propietario]'";
+}
+
+if($_GET[estado]!=""){
+		$sqlVehiculo.=" and estado $_GET[comparador7] '$_GET[estado]'";
+}
+
+if($_GET[tipo_suspension]!=""){
+		$sqlVehiculo.=" and vehiculo.tipo_suspension = '$_GET[tipo_suspension]'";
+}
+
+$vehiculos=mysql_query($sqlVehiculo,$conexion) or die(mysql_error());
+$row_vehiculos=mysql_fetch_assoc($vehiculos);
+
+
+$sqlVehiculo.=" order by placa asc";
+
+//echo $sqlVehiculo;
+
+
+//echo $_SERVER['QUERY_STRING'];
+
+?>
+
+
+<form method="get" action="vehiculos.php" id="BusquedaVehiculosForm" target="_self">
+<table align="center"><tr><td><h2>Panel De Busqueda Vehiculos</h2></td></tr></table>
+<table border="0" align="center">
+	<tr class="tr_title">
+		<td>Placa</td>
+		<td>
+			<select name="comparador1">
+				<option value="=" <?php if($_GET[comparador1]=="=")echo "selected=\"selected\""; ?>>=</option>
+				<option value="like" <?php if($_GET[comparador1]=="like")echo "selected=\"selected\""; ?>>Contiene</option>
+			</select>		</td>
+		<td>
+			<input type="text" name="placa" value="<?php echo $_GET[placa]; ?>">		</td>
+	</tr>
+	<tr class="tr_title">
+		<td>Color		</td>
+		<td>
+			<select name="comparador2">
+				<option value="=" <?php if($_GET[comparador2]=="=")echo "selected=\"selected\""; ?>>=</option>
+				<option value="like" <?php if($_GET[comparador2]=="like")echo "selected=\"selected\""; ?>>Contiene</option>
+			</select>		</td>
+		<td>
+			<input type="text" name="color" value="<?php echo $_GET[color]; ?>">		</td>
+	</tr>	
+	<tr class="tr_title">
+		<td>Pasajeros		</td>
+		<td>
+			<select name="comparador3">
+				<option value="=" <?php if($_GET[comparador3]=="=")echo "selected=\"selected\""; ?>>=</option>
+			</select>		</td>
+		<td>
+			<input type="text" name="pasajeros" value="<?php echo $_GET[peso]; ?>" onKeyPress="return val_num();">		</td>
+	</tr>	
+	<tr class="tr_title">
+		<td>Carga		</td>
+		<td>
+			<select name="comparador4">
+				<option value="=" <?php if($_GET[comparador3]=="=")echo "selected=\"selected\""; ?>>=</option>
+			</select>		</td>
+		<td>
+			<input type="text" name="carga" onKeyPress="return val_num(event);" value="<?php echo $_GET[carga]; ?>">		</td>
+	</tr>	
+	<tr class="tr_title">
+		<td>Tipo		</td>
+		<td>
+			<select name="comparador5">
+				<option value="=">=</option>
+			</select>		</td>
+		<td>
+			<?php 
+				$tipos=mysql_query("select * from tipo_vehiculo",$conexion)or die(mysql_error());
+			?>		
+			<select name="tipo">
+				<option value="">Seleccione Valor</option>
+			<?php
+				while($row_tipos=mysql_fetch_assoc($tipos)){
+			?>
+				<option value="<?php echo $row_tipos[id_tipo]; ?>" <?php if($_GET[tipo]==$row_tipos[id_tipo])echo "selected=\"selected\""; ?>><?php echo $row_tipos[nombre]; ?></option>
+			<?php
+				}
+			?>
+			</select>		</td>
+	</tr>	
+	<tr class="tr_title">
+		<td>Propietario		</td>
+		<td>
+			<select name="comparador6">
+				<option value="=">=</option>
+			</select>		</td>
+		<td>
+			<?php 
+				$propietarios=mysql_query("select * from propietario",$conexion)or die(mysql_error());
+			?>		
+			<select name="propietario">
+				<option value="">Seleccione Valor</option>
+			<?php
+				while($row_propietarios=mysql_fetch_assoc($propietarios)){
+			?>
+				<option value="<?php echo $row_propietarios[id_propietario]; ?>" <?php if($_GET[propietario]==$row_propietarios[id_propietario])echo "selected=\"selected\""; ?>><?php echo $row_propietarios[nombre]; ?></option>
+			<?php
+				}
+			?>
+			</select>		</td>
+	</tr>				
+	<tr class="tr_title">
+		<td>Estado		</td>
+		<td>
+			<select name="comparador7">
+				<option value="=" <?php if($_GET[comparador1]=="=")echo "selected=\"selected\""; ?>>=</option>
+			</select>		</td>
+		<td>
+
+			<?php 
+				$estados=mysql_query("select * from estado_vehiculo",$conexion)or die(mysql_error());
+			?>		
+			<select name="estado">
+				<option value="">Seleccione Valor</option>			
+			<?php
+				while($row_estados=mysql_fetch_assoc($estados)){
+			?>
+				<option value="<?php echo $row_estados[id_estado]; ?>" <?php if($_GET[estado]==$row_estados[id_estado])echo "selected=\"selected\""; ?>><?php echo $row_estados[nombre]; ?></option>
+			<?php
+				}
+			?>
+			</select>		</td>
+	</tr>
+
+	<tr class="tr_title">
+		<td>Tipo Suspension		</td>
+		<td>
+			<select name="comparador8">
+				<option value="=" <?php if($_GET[comparador1]=="=")echo "selected=\"selected\""; ?>>=</option>
+			</select>		</td>
+		<td>
+
+			<?php 
+				$tipo_suspension=mysql_query("select * from tipo_suspension",$conexion)or die(mysql_error());
+			?>		
+			<select name="tipo_suspension">
+				<option value="">Seleccione Valor</option>			
+			<?php
+				while($row_tipo_suspension=mysql_fetch_assoc($tipo_suspension)){
+			?>
+				<option value="<?php echo $row_tipo_suspension[id_tipo]; ?>" <?php if($_GET[tipo_suspension]==$row_tipo_suspension[id_tipo])echo "selected=\"selected\""; ?>><?php echo $row_tipo_suspension[nombre]; ?></option>
+			<?php
+				}
+			?>
+			</select>		</td>
+	</tr>
+
+	<tr class="tr_title">
+	  <td>&nbsp;</td>
+	  <td><label>
+	    <input type="button" name="Reporte" value="Reporte" onClick="document.getElementById('BusquedaVehiculosForm').action='../reports/vehiculos.report.php';document.getElementById('BusquedaVehiculosForm').target='IFrameProcess';enviar('BusquedaVehiculosForm');">
+	  </label></td>
+	  <td><label>
+	    <input type="button" name="Buscar" value="Buscar" onClick="document.getElementById('BusquedaVehiculosForm').action='vehiculos.php';document.getElementById('BusquedaVehiculosForm').target='_self';enviar('BusquedaVehiculosForm');">
+	  </label></td>
+    </tr>						
+</table>
+</form>
+
+
+
+<table align="center"><tr><td><h2>vehiculos</h2></td></tr></table>
+<br>
+<table width="578" border="0" align="center">
+	<tr>
+		<td width="240" align="left"><a href="propietarios.php">Propietarios</a></td>
+		<td width="112"></td>
+		<td width="212" align="right"><a href="tipo_suspension.php">Tipos De Suspension</a></td>				
+	</tr>
+</table>
+<br><br />
+<table border="0" align="center">
+<tr>
+<td>
+<?php include('../forms/aplica_pago.form.php'); ?>
+</td>
+	<td>
+<?php include('../forms/suspender.form.php'); ?>
+</td>
+</tr>
+</table><br />
+
+
+<table border="1" align="center">
+  <tr class="tr_title">
+  	<?php if($_SESSION[datos]->perfil==1){ ?>
+			<td>
+				<a onclick="SelCheckBox('vehiculoSel');">Sel</a>
+			</td>
+			
+	<?php } ?>
+    <td width="146">Placa</td>
+    <td width="169">Color</td>
+    <td width="140">Pasajeros</td>
+    <td width="140">Carga (ton)</td>	
+    <td width="140">Tipo</td>		
+    <td width="140">Propietario</td>			
+    <td width="140">Estado</td>				
+	<td colspan="2">Accion</td>
+  </tr>
+  <?php 
+  		$i=0;
+  		do{ 
+  
+  		$sqlSuspension="select suspension_mega.fecha, tipo_suspension.nombre, tipo_suspension.duracion from tipo_suspension, suspension_mega where tipo_suspension.id_tipo=suspension_mega.id_tipo and suspension_mega.vehiculo='$row_vehiculos[placa]' order by suspension_mega.id_suspension desc limit 1";
+		$resultSuspension=mysql_query($sqlSuspension,$conexion)or die(mysql_error().$sqlSuspension);
+		$row_suspension=mysql_fetch_assoc($resultSuspension);	
+		
+		$fecha_inicio_segundos=segundos($row_suspension[fecha]);
+		$vence_segundos=$fecha_inicio_segundos+($row_suspension[duracion]*3600);
+		$vence=date("Y-m-d H:i:s",$vence_segundos);
+  ?>
+
+    <tr <?php if($row_vehiculos[pago]!=0){ if($row_vehiculos['estado']!=1){ ?> bgcolor="#F99D9D" title="Suspendido por <?php echo $row_suspension[nombre]." Durante ".$row_suspension[duracion]." Horas";  ?> desde las <?php echo $row_suspension[fecha]?> hasta las <?php echo $vence; ?>"<?php }}else{ ?> bgcolor="#F99D9D" title="Suspendido por no pago"<?php } ?>>
+	<?php if($_SESSION[datos]->perfil==1){ ?>
+			<td>
+				<input type="checkbox" name="vehiculoSel<?php echo $i; ?>" id="vehiculoSel<?php echo $i; ?>" value="<?php echo $row_vehiculos['placa']; ?>" />
+			</td>
+	<?php } ?>
+	
+      <td><a onclick="abrir('/megataxi/reports/reporte_vehiculos.report.php','','&vehiculo=<?php echo $row_vehiculos['placa']; ?>&fecha1=<?php echo date("Y-m-d"); ?>&fecha2=<?php echo date("Y-m-d"); ?>','Edicion');ver_div_edit();" style="cursor:pointer;"><?php echo $row_vehiculos['placa']; ?></a></td>
+      <td><?php echo $row_vehiculos['color']; ?></td>
+      <td><?php echo $row_vehiculos['pasajeros']; ?></td>
+      <td><?php echo $row_vehiculos['carga']; ?></td>	  	  
+      <td><?php echo $row_vehiculos['tipo']; ?></td>	  	  	  
+      <td><?php echo $row_vehiculos['propietario']; ?></td>	  	  	  	  
+      <td><?php echo $row_vehiculos['estadoVehiculo']; ?></td>	  	  	  	  	  
+	  
+	  <td width="24">
+	  	<form id="Dropvehiculo<?php echo $row_vehiculos['id_vehiculo']; ?>" action="../process/vehiculo.process.php" method="post" target="IFrameProcess"><div align="center"><input type="hidden" name="id_vehiculo" value="<?php echo $row_vehiculos[id_vehiculo]; ?>">
+		    <input name="modo" type="hidden" value="delete">
+		    <img src="../images/b_drop.png" style="cursor:pointer;" alt="Borrar" onClick="enviar('Dropvehiculo<?php echo $row_vehiculos['id_vehiculo']; ?>');"></div>
+		</form>
+	 </td>
+	<td><form action="../process/vehiculo.process.php" method="post" target="IFrameProcess" id="SuspenderVehiculo<?php echo $row_vehiculos[placa]; ?>"><input type="hidden" name="modo" value="<?php if($row_vehiculos[estado]==1) echo "suspender"; else echo "quitarSuspension"; ?>" /><input type="hidden" name="placa" value="<?php echo $row_vehiculos[placa]; ?>" /><input type="button" value="<?php if($row_vehiculos[estado]==1) echo "Suspender"; else echo "Quitar Suspension"; ?>" <?php if($row_vehiculos['estado']==1){ ?> onclick="abrir('/megataxi/forms/suspension.form.php','','&<?php echo $_SERVER['QUERY_STRING']; ?>&vehiculo=<?php echo $row_vehiculos[placa]; ?>','Edicion');ver_div_edit();" <?php }else{ ?> onclick="enviar('SuspenderVehiculo<?php echo $row_vehiculos[placa]; ?>');" <?php } ?> /></form></td>
+	  <td width="19"><img src="../images/b_edit.png" style="cursor:pointer;" onclick="abrir('/megataxi/forms/vehiculo.form.php','','&modo=edit&placa=<?php echo $row_vehiculos['placa']; ?>','Edicion');ver_div_edit();" alt="Editar"></td>
+    </tr>
+    <?php 
+		$i++;
+	} while ($row_vehiculos = mysql_fetch_assoc($vehiculos)); ?>
+	<tr>
+	
+	<?php if($_SESSION[datos]->perfil==1){ ?>
+<td>
+</td>
+			<td align="center"><img src="../images/s_cancel.png" alt="Suspender Por Pago" onclick="suspension('SuspenderVariosXPago');" style="cursor:pointer;" title="Suspender por pago." alt="Suspender por pago." />&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+		<img src="../images/s_success.png" title="Quitar Suspension Por Pago" alt="Quitar Suspension Por Pago" width="16" height="16" onclick="suspension('QuitarSuspenderVariosXPago');" style="cursor:pointer;" />
+
+			</td>
+	<?php } ?>
+		
+		<td colspan="7"></td>
+		<td colspan="2"><input type="button" value="Nuevo" onClick="abrir('/megataxi/forms/vehiculo.form.php','','&modo=add','Edicion');ver_div_edit();"></td>
+	</tr>
+</table>
+
+<form id="suspenderVarios" name="suspenderVarios" target="IFrameProcess" method="get" action="">
+</form>
+
+<?php
+mysql_free_result($vehiculos);
+?>

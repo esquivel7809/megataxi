@@ -1,0 +1,440 @@
+
+/*------------------------------------------------
+	estilos generales - Layout CSS
+------------------------------------------------*/
+body {
+	/*
+	background-color: #f3f3f3;
+	background: url(images/bg_body.png) repeat-x;
+	border-top: 5px solid #000;
+	*/
+	
+	color: #333;
+	font-family: 'HelveticaLTStdCondBold', sans-serif;
+	font-size: 14px;
+	padding: 0px;
+	margin: 0px;
+	
+	background: #dbdbdb;
+	background: -moz-linear-gradient(left, #dbdbdb 13%, #d1d1d1 31%, #e2e2e2 51%, #d1d1d1 77%, #fefefe 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(13%,#dbdbdb), color-stop(31%,#d1d1d1), color-stop(51%,#e2e2e2), color-stop(77%,#d1d1d1), color-stop(100%,#fefefe));
+	background: -webkit-linear-gradient(left, #dbdbdb 13%,#d1d1d1 31%,#e2e2e2 51%,#d1d1d1 77%,#fefefe 100%);
+	background: -o-linear-gradient(left, #dbdbdb 13%,#d1d1d1 31%,#e2e2e2 51%,#d1d1d1 77%,#fefefe 100%);
+	background: -ms-linear-gradient(left, #dbdbdb 13%,#d1d1d1 31%,#e2e2e2 51%,#d1d1d1 77%,#fefefe 100%);
+	background: linear-gradient(to right, #dbdbdb 13%,#d1d1d1 31%,#e2e2e2 51%,#d1d1d1 77%,#fefefe 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', endColorstr='#fefefe',GradientType=1 );
+}
+.fondo{
+	background-color: #f9f9f9;
+}
+/******** header **********/
+.header {
+	height: 52px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+div.empresa div{
+	float:left;
+}
+div.empresa div.logo-empresa{
+	width: 175px;
+}
+div.empresa div.nombre-empresa{
+	text-align:center;
+	vertical-align:middle;
+	width: 115px;
+	height: 100%;
+}
+div.empresa div.nombre-empresa p{
+	padding-top: 10px;
+}
+.logo-sigitrans{
+	text-align:center;
+}
+.img-cond{
+	text-align:right;
+}
+/****** fin header *******/
+/******* menu ************/
+#navmenu{
+	margin-top: -1px;
+}
+
+/***** fin menu *********/
+
+/******* contenido ************/
+#contenido {
+        min-height: 450px;
+}
+
+.subtitulo-modulo {
+	box-shadow: 0px 1px 0px rgb(255, 255, 255);
+	color: rgb(119, 119, 119);
+	font-size: 18px;
+	font-weight: 300;
+	padding: 20px 0px 12px 0px;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+	border-bottom: 1px solid rgb(226, 226, 226);
+	text-align: center;
+	float: left;
+	width: 100%;
+}
+
+/*** informes ***/
+div#otrosfiltros > ul li{
+	width: 140px;
+	float: left;
+}
+div#filtros div{
+	float: left;
+}
+div#filtros > div.sel_filtros{
+	margin-left:10px;
+	margin-right:10px;
+}
+div#filtros > div.sel_filtros h4{
+	padding-top:20px;
+}
+div.fechas_informes > ul li {
+	width: 288px;
+	float: left;
+	margin: 10px;
+}
+/***/
+
+/***** fin contenido *********/
+
+/******* footer ************/
+div.footer {
+	color: #102e57;
+	padding: 20px 0 20px;
+	
+}
+div.footer .wrapper {
+	padding: 0 20px;
+	text-align: center;
+}
+
+/***** fin footer *********/
+
+
+
+/******* otros ************/
+.placa{
+    font-size: 40px !important;
+    height: 50px !important;
+    text-transform: uppercase;
+}
+.nombre-aplicacion{
+	font-size: 20px;
+	font-family:"Comic Sans MS", cursive;
+}
+fieldset {
+	border:1px solid #bbb;
+	padding:10px;
+	/*position:relative;*/
+	/*background:#e9e9e9;*/
+	margin-bottom:10px;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: -1px 1px 5px 0 #888;
+	/*width: 615px;*/
+}
+legend {
+	font-size:1.1em;
+	padding:.4em .8em;
+	background:#fff;
+	border:1px solid #bbb;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: -1px 1px 5px 0 #888;
+}
+
+/***** fin otros *********/
+
+/*** grilla de licencias de conduccion**/
+ul.licencias li{
+	float:left;
+	padding: 9px 0px 9px 5px;
+}
+ul.licencias li.titulo{
+	width:100%;
+	font-family: 'ITCAvantGardeStd-Demi';
+	font-size:20px;
+	text-align:center;
+}
+ul.licencias li.doc{
+	width:25%;
+}
+ul.licencias li.nom{
+	width:60%;
+}
+ul.licencias li.acc{
+	width:10%;
+	padding: 0px;
+}
+ul.licencias li.acc b.remove{
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	background: url("../img/png/24x24/remove.png") no-repeat scroll 0% 0% transparent;
+	width: 32px;
+	height: 32px;
+}
+/*****/
+
+/*** grilla de vehiculo propietario **/
+ul.propietarios li{
+	float:left;
+	padding: 9px 0px 9px 5px;
+}
+ul.propietarios li.titulo{
+	width:100%;
+	font-family: 'ITCAvantGardeStd-Demi';
+	font-size:20px;
+	text-align:center;
+}
+ul.propietarios li.doc{
+	width:25%;
+}
+ul.propietarios li.nom{
+	width:60%;
+}
+ul.propietarios li.acc{
+	width:10%;
+	padding: 0px;
+}
+ul.propietarios li.acc b.remove{
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	background: url("../img/png/24x24/remove.png") no-repeat scroll 0% 0% transparent;
+	width: 32px;
+	height: 32px;
+}
+/*****/
+
+/********* estilos para los mensajes de confirmacion *********/
+#mensaje-confirmacion{
+	margin-top:10px;
+}
+#mensaje-confirmacion.error > .login-status-icon {
+	background-image: url("images/notice-error.png");
+}
+#mensaje-confirmacion.exito > .login-status-icon {
+	background-image: url("images/notice-success.png");
+}
+#mensaje-confirmacion .login-status-icon {
+	display: block;
+	position: absolute;
+	width: 27px;
+	height: 27px;
+}
+.exito {
+	background: #5fa74e;
+	background: -moz-linear-gradient(top,#ADDCAE 0,#5fa74e 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ADDCAE),color-stop(100%,#5fa74e));
+	background: -webkit-linear-gradient(top,#ADDCAE 0,#5fa74e 100%);
+	background: -o-linear-gradient(top,#ADDCAE 0,#5fa74e 100%);
+	background: -ms-linear-gradient(top,#ADDCAE 0,#5fa74e 100%);
+	background: linear-gradient(to bottom,#ADDCAE 0,#5fa74e 100%);
+	color: #fff;
+}
+.error {
+	background: #bc3e33;
+	background: -moz-linear-gradient(top,#dd5952 0,#bc3e33 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#dd5952),color-stop(100%,#bc3e33));
+	background: -webkit-linear-gradient(top,#dd5952 0,#bc3e33 100%);
+	background: -o-linear-gradient(top,#dd5952 0,#bc3e33 100%);
+	background: -ms-linear-gradient(top,#dd5952 0,#bc3e33 100%);
+	background: linear-gradient(to bottom,#dd5952 0,#bc3e33 100%);
+	color: #fff;
+}
+.error, .exito {
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	min-height: 27px;
+	padding: 5px 10px 5px 5px;
+	-moz-box-shadow: 0 2px 2px #2b2b2b;
+	-webkit-box-shadow: 0 2px 2px #2b2b2b;
+	box-shadow: 0 2px 2px #2b2b2b;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#2B2B2B')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2,Direction=135,Color='#2B2B2B');
+}
+#login-status-message {
+	padding-left: 36px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+/********* fin estilos para los mensajes de confirmacion ********/
+
+/********** lista de seguros ****************/
+ul.result_seguros > li{
+	font-size: 12px;
+	width: 115px;
+	float: left;
+	height: 31px;
+	border: 1px solid;
+	padding: 3px;
+}
+ul.result_seguros > li.titulo{
+	font-size:14px;
+	font-weight:bold;
+	text-align: center;
+}
+ul.result_seguros > li.vacio{
+	width: 484px !important;
+	background: #F00;
+}
+ul.result_seguros > li.actualizado{
+	background: #ADDCAE;
+}
+ul.result_seguros > li.vencido{
+	background: #F00;
+}
+/********** fin lista de seguros ****************/
+
+/********** panel de control****************/
+div.lateral {
+	width: 100%;
+	background-color: #ADDCAE;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	/*behavior: url(ie-css3.htc);*/
+	padding-bottom: 6px;
+	float: left;
+	margin-top: 0px;
+}
+/********** fin panel de control ****************/
+
+/******* menu ************/
+/***** fin menu *********/
+
+#branding{
+	font-size: 22px !important;
+	padding-top:10px;
+}
+.content{
+	float: left;
+	padding-bottom: 10px;
+}
+a {
+	text-decoration:none;
+}
+.espacio{
+	width: 50px;
+}
+.administrador{
+	text-align: right;
+}
+div.nomb_prop{
+	font-family: 'ITCAvantGardeStd-Demi';
+	color: #696969;
+	font-size: 18px;
+	width: 380px;
+	float: left;
+	text-align: right;
+	padding-top: 4px;
+}
+div.opcion_prop{
+	width: 100px;
+	float: left;
+	padding-left: 20px;
+}
+.borde-sombra{
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: -1px 1px 5px 0 #888;
+}
+.foto{
+	float:left;
+	width:168px;
+	min-height:120px;
+	border: 1px; 
+}
+.foto > img{
+	width:140px;
+	height:120px;
+}
+.nombre, .otros-datos{
+	width:430px;
+	float:left;
+	font-size:22px;
+}
+.nombre{
+	margin-top: -10px;
+}
+.otros-datos{
+	font-size:18px;
+	padding-top: 10px;
+}
+.otros-datos > p,
+.otros-datos > label{
+	font-size: 13px;
+	font-weight: normal;
+	float: left;
+	margin-right: 10px;
+	text-align: left;
+	line-height: 10px;
+	height:20px;
+}
+.otros-datos > p{
+	width:300px;
+	font-size: 14px;
+	font-weight:bold;
+	margin-bottom: 4px;
+}
+.otros-datos > label{
+	width: 80px;
+	text-align: right !important;
+}
+div.section-vehi-asoc {
+	float:left;
+}
+div.section-vehi-asoc > ul {
+    margin-left: 11px;
+    float: left;
+    height: auto;
+}
+div.section-vehi-asoc > ul > li {
+    width: 78px;
+    float: left;
+    height: 30px;
+	margin-left: 10px;
+}
+div.section-vehi-asoc > ul > li.accion {
+    width: 135px;
+}
+#site_info {
+	text-align: center;
+}
+#site_info .box {
+	color:#ccc;
+	background:#666;
+	margin-bottom:10px;
+}
+#site_info a {
+	color:#fff;
+}
+#site_info a:hover {
+	color:#000;
+}
+/******/
+/**estilos para el form de informes**/
+div.contenido-informe {
+	padding-top: 0px !important;
+}
+div.contenido-informe > form > div{
+	float: left !important;
+}
+div.contenido-informe > form > div#tiporeporte {
+	float: right;
+}
+/*****/
+
+.nombre_sub{
+	width:300px;
+}
+.item{
+	width:20px;
+}
+

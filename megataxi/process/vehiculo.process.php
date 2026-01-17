@@ -1,0 +1,187 @@
+<?php 
+include('../Connections/conexion.php');
+include('validar.php');
+include('../libraries/javascript.php');
+
+$modo=$_POST["modo"]?$_POST["modo"]:$_GET["modo"];
+
+if((date("m")=="01"&&date("d")<=5&&date("G")<8)||(date("m")=="01"&&date("d")<5))
+	$pago=2;
+else if((date("m")=="02"&&date("d")<=7&&date("G")<8)||(date("m")=="02"&&date("d")<7))
+	$pago=2;
+else if((date("m")=="03"&&date("d")<=7&&date("G")<8)||(date("m")=="03"&&date("d")<7))
+	$pago=2;
+else if((date("m")=="04"&&date("d")<=5&&date("G")<8)||(date("m")=="04"&&date("d")<5))
+	$pago=2;
+else if((date("m")=="05"&&date("d")<=5&&date("G")<8)||(date("m")=="05"&&date("d")<5))
+	$pago=2;
+else if((date("m")=="06"&&date("d")<=7&&date("G")<8)||(date("m")=="06"&&date("d")<7))
+	$pago=2;
+else if((date("m")=="07"&&date("d")<=5&&date("G")<8)||(date("m")=="07"&&date("d")<5))
+	$pago=2;
+else if((date("m")=="08"&&date("d")<=5&&date("G")<8)||(date("m")=="08"&&date("d")<5))
+	$pago=2;
+else if((date("m")=="09"&&date("d")<=5&&date("G")<8)||(date("m")=="09"&&date("d")<5))
+        $pago=2;
+else if((date("m")=="10"&&date("d")<=5&&date("G")<8)||(date("m")=="10"&&date("d")<5))
+        $pago=2;
+else if((date("m")=="11"&&date("d")<=8&&date("G")<8)||(date("m")=="11"&&date("d")<8))
+        $pago=2;
+else if((date("m")=="12"&&date("d")<=5&&date("G")<8)||(date("m")=="12"&&date("d")<5))
+        $pago=2;
+else
+	$pago=1;
+
+
+echo "Modo= $modo, Pago= $pago";
+
+
+
+switch($modo){
+	case 'add':
+		$sql="insert into vehiculo(placa,color,pasajeros,carga,id_tipo,id_propietario,estado) values('$_POST[placa]','$_POST[color]','$_POST[pasajeros]','$_POST[carga]','$_POST[id_tipo]','$_POST[id_propietario]','$_POST[estado]')";
+		$result=mysql_query($sql,$conexion)or die(mysql_error());
+		
+		break;
+	case 'edit':
+		$sql="update vehiculo set placa='$_POST[placa]', color='$_POST[color]', pasajeros='$_POST[pasajeros]', carga='$_POST[carga]', id_tipo='$_POST[id_tipo]', id_propietario='$_POST[id_propietario]', estado='$_POST[estado]' where placa='$_POST[placa_ant]'";
+		$result=mysql_query($sql,$conexion)or die(mysql_error());
+		break;
+	case 'delete':
+		$sql="delete from vehiculo where placa='$_POST[placa]'";
+		$result=mysql_query($sql,$conexion)or die(mysql_error());
+		break;	
+	case 'suspender':
+		if(isset($_POST[id_tipo])){
+
+			$fecha_suspension="'$_POST[fecha_suspension] $_POST[hora_suspension]:$_POST[min_suspension]:00'";
+
+			if($_POST[id_tipo]!="NO PAGO"){
+				$suspensionSql="insert into suspension_mega(vehiculo,id_tipo,fecha) values('$_POST[placa]','$_POST[id_tipo]',$fecha_suspension)";
+				echo $suspensionSql;
+				$resultSuspension=mysql_query($suspensionSql,$conexion)or die(mysql_error());
+				$estado=2;	
+				
+				$sql_pago="select pago from vehiculo where placa='$_POST[placa]'";	
+				$result_pago=mysql_query($sql_pago,$conexion)or die(mysql_error());
+				$row_pago=mysql_fetch_assoc($result_pago);
+				$pago=$row_pago[pago];	
+
+						$sql_suspende="update vehiculo set suspencion='0' where placa='$_POST[placa]'";
+						$result_suspende=mysql_query($sql_suspende,$conexion)or die(mysql_error());
+		
+			}else{
+				$estado=3;
+				$pago=0;
+
+						$sql_pago="update vehiculo set frecuencia='0' where placa='$_POST[placa]'";
+						$result_pago=mysql_query($sql_pago,$conexion)or die(mysql_error());
+
+			}
+			$sql="update vehiculo set estado='$estado', pago='$pago' where placa='$_POST[placa]'";
+			$result=mysql_query($sql,$conexion)or die(mysql_error());
+
+			if($result){
+				if($_POST[stop]==1){
+					die();
+				}
+			}else{
+				alert("no se pudo aplicar la suspension");
+			}
+		}
+		break;			
+	case 'quitarSuspension':
+		$compruebaEstadoSql="select estado, pago from vehiculo where placa='$_POST[placa]'";
+		$resultCompruebaEstado=mysql_query($compruebaEstadoSql,$conexion) or die($compruebaEstadoSql);
+		$row_vehiculo=mysql_fetch_assoc($resultCompruebaEstado);
+		
+		$autoriza=1;
+//		if($row_vehiculo[pago]==0){	
+//			if($_SESSION[datos]->perfil==1){
+//				$autoriza=1;
+//			}
+//		}else if($row_vehiculo[estado]==2){
+//			$autoriza=1;
+//		}
+		
+		if($autoriza){
+			$sql="update vehiculo set estado='1' where placa='$_POST[placa]'";
+			$result=mysql_query($sql,$conexion)or die(mysql_error());
+		}else{
+			alert("Este vehiculo se encuentra suspendido por pago, usted no tiene autorizacion para quitar suspension");
+		}
+                $sql_suspende="update vehiculo set suspencion='1' where placa='$_POST[placa]'";
+                $result_suspende=mysql_query($sql_suspende,$conexion)or die(mysql_error());
+		
+		break;
+	case 'SuspenderVariosXPago':
+		for($i=0;$i<count($_GET[vehiculo]);$i++){
+			$sql="update vehiculo set estado='3', pago='0', suspencion='0' where placa='".$_GET[vehiculo][$i]."'";
+			$result=mysql_query($sql,$conexion)or die(mysql_error());
+		}
+		break;		
+	case 'QuitarSuspenderVariosXPago':
+
+		for($i=0;$i<count($_GET[vehiculo]);$i++){
+			$select_vehiculo="select estado from vehiculo where placa ='".$_GET[vehiculo][$i]."'";
+			$result_vehiculo=mysql_query($select_vehiculo,$conexion);
+			$row_vehiculo=mysql_fetch_assoc($result_vehiculo);
+			
+			if($row_vehiculo[estado]==3)
+				$estado=1;
+			else
+				$estado=$row_vehiculo[estado];
+		
+			$sql="update vehiculo set estado='$estado', pago='$pago', suspencion='1' where placa='".$_GET[vehiculo][$i]."'";
+			$result=mysql_query($sql,$conexion)or die(mysql_error());
+				
+		}
+		break;			
+	case 'AplicarPago':
+
+			$file=fopen("/opt/megataxi/pagos_aplicados.txt","a+");
+			
+			$select_vehiculo="select estado from vehiculo where placa ='".$_POST[vehiculo]."'";
+			$result_vehiculo=mysql_query($select_vehiculo,$conexion);
+			$row_vehiculo=mysql_fetch_assoc($result_vehiculo);
+
+			if($row_vehiculo[estado]==3)
+				$estado=1;
+			else
+				$estado=$row_vehiculo[estado];
+	
+			if(mysql_num_rows($result_vehiculo)>0){
+				//modificado por jorge serrano 04 abril 2013
+				//registramos el pago
+				$sql_vehiculo_pago="insert into vehiculo_pago(idmega,ano,mes,fechapago,valor)
+						 values('$_POST[vehiculo]','".date("Y")."','".date("m")."','".date("Y-m-d H:i:s")."',0)";
+				$result_vehiculo_pago=mysql_query($sql_vehiculo_pago,$conexion)or die(mysql_error());
+
+				//actualizamos el estado del mega (frecuencia)
+				$sql_update_vehiculo="update vehiculo set frecuencia='1' where placa = '$_POST[vehiculo]'";
+				$result_update_vehiculo_pago=mysql_query($sql_update_vehiculo,$conexion)or die(mysql_error());
+
+				$sql="update vehiculo set pago='$pago', estado='$estado' where placa = '$_POST[vehiculo]'";
+				//echo $sql;
+				$result_pago=mysql_query($sql,$conexion)or die(mysql_error());
+				if($result_pago){
+					alert("Se ha aplicado el pago=$pago correctamente al vehiculo $_POST[vehiculo]");
+					fwrite($file,"\n ".date("Y-m-d H:i:s")." Se ha aplicado  pago=$pago al vehiculo $_POST[vehiculo] \n");				}else{
+					fwrite($file,"\n No se pudo aplicar el pago=$pago al vehiculo $_POST[vehiculo]");
+					}
+
+			}else{
+				alert("El vehiculo no existe");
+				
+			}
+			fclose($file);
+			break;					
+			
+}
+
+if($result){
+	ejecutar("parent.abrir('/megataxi/system/vehiculos_body.php','','&".$_SERVER['QUERY_STRING']."','content');");
+	accion("Se realizo correctamente la accion","parent");
+//	alert($result);
+}
+?>

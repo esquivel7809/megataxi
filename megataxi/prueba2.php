@@ -1,0 +1,1 @@
+<form action="" method="get"><input name="" onfocus="this.blur();" type="text" /><input name="" type="text" /></form>

@@ -1,0 +1,37 @@
+<?php 
+include('../Connections/conexion.php');
+include('validar.php');
+include('../libraries/javascript.php');
+
+
+switch($_POST[modo]){
+	case 'add':
+		$sql="insert into vehiculo(placa,color,pasajeros,carga,id_tipo,id_propietario,estado) values('$_POST[placa]','$_POST[color]','$_POST[pasajeros]','$_POST[carga]','$_POST[id_tipo]','$_POST[id_propietario]','$_POST[estado]')";
+		$result=mysql_query($sql,$conexion)or die(mysql_error());
+		break;
+	case 'edit':
+		$sql="update vehiculo set placa='$_POST[placa]', color='$_POST[color]', pasajeros='$_POST[pasajeros]', carga='$_POST[carga]', id_tipo='$_POST[id_tipo]', id_propietario='$_POST[id_propietario]', estado='$_POST[estado]' where placa='$_POST[placa_ant]'";
+		$result=mysql_query($sql,$conexion)or die(mysql_error());
+		break;
+	case 'delete':
+		$sql="delete from vehiculo where placa='$_POST[placa]'";
+		$result=mysql_query($sql,$conexion)or die(mysql_error());
+		break;	
+	case 'suspender':
+		$suspensionSql="insert into suspension_mega(vehiculo,id_tipo) values('$_POST[placa]','$_POST[id_tipo]')";
+		echo $suspensionSql;
+		$resultSuspension=mysql_query($suspensionSql,$conexion)or die(mysql_error());
+		$sql="update vehiculo set estado='2', tipo_suspension='$_POST[id_tipo]' where placa='$_POST[placa]'";
+		$result=mysql_query($sql,$conexion)or die(mysql_error());
+		break;			
+	case 'quitarSuspension':
+		$sql="update vehiculo set estado='1', tipo_suspension='0' where placa='$_POST[placa]'";
+		$result=mysql_query($sql,$conexion)or die(mysql_error());
+		break;					
+}
+
+if($result){
+	ejecutar("parent.abrir('/megataxi/system/vehiculos_body.php','','&".$_SERVER['QUERY_STRING']."','content');");
+	accion("Se realizo correctamente la accion","parent");
+}
+?>

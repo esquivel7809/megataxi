@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_llamada_actual" value="name:id_llamada_actual;datatype:int,name:telefono;datatype:string,name:estado;datatype:int" />
+</info>
