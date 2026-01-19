@@ -57,9 +57,7 @@ class Validacion extends CI_Controller {
                 {
                     $data["resultado"] = "nousuario";
                 }
-            }
-            else
-            {
+            }else{
                 $data["resultado"] = "noempresa";
             }
             $this->load->view('validacionusuario',$data);

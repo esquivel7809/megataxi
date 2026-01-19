@@ -15,7 +15,7 @@
 |
 */
 $dominio="";
-$dominio="localhost/megax";
+$dominio="localhost/megataxi";
 // $dominio=$_SERVER['SERVER_NAME'];
 $config['base_url']	= 'http://'.$dominio.'/app/transporte/';
 

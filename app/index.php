@@ -1,3 +1,3 @@
 <?php
-header('Location: /app/transporte/index.php');
+header('Location: app/transporte/index.php');
 ?>

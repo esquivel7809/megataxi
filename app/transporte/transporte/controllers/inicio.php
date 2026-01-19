@@ -35,7 +35,9 @@ class Inicio extends CI_Controller {
 		$data['vista_contenido']="inicio_view";
         // se consultan las empresas
 		$arrayEmpresas=$this->funciones->consEmpresa();
+		
 		$empresas['0']='Selecione Empresa';
+
 		foreach ($arrayEmpresas as $fila)
 		{
 			$empresas[$fila['idempresa']]=$fila['nombreempresa'];
